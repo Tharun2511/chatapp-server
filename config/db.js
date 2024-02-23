@@ -1,15 +1,14 @@
 const mongoose = require("mongoose");
-const colors = require("colors");
 
 const connectDB = async () => {
     try {
         const conn = await mongoose.connect("mongodb://localhost:27017/realtimechatapp");
 
         console.log(
-            `MongoDB Connected: ${conn.connection.host}`.cyan.underline
+            `MongoDB Connected: ${conn.connection.host}`
         );
     } catch (error) {
-        console.log(`Error: ${error.message}`.red.bold);
+        console.log(`Error: ${error.message}`);
         process.exit();
     }
 };
